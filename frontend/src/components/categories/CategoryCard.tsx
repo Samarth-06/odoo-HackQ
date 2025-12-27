@@ -1,6 +1,6 @@
 import React from 'react';
 import { Category } from './Categories';
-import { Edit2, Trash2, Package, DollarSign } from 'lucide-react';
+import { Edit2, Trash2, Package, DollarSign, User, Building2 } from 'lucide-react';
 
 interface CategoryCardProps {
   category: Category;
@@ -42,6 +42,26 @@ export function CategoryCard({ category, onEdit, onDelete }: CategoryCardProps) 
           </div>
           <span className="text-gray-900">${(category.totalCost / 1000).toFixed(0)}K</span>
         </div>
+
+        {category.responsible && (
+          <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <User className="w-4 h-4" />
+              <span>Responsible</span>
+            </div>
+            <span className="text-gray-900 text-sm truncate max-w-[100px]">{category.responsible}</span>
+          </div>
+        )}
+
+        {category.companyName && (
+          <div className="flex items-center justify-between p-2 bg-gray-50 rounded-lg">
+            <div className="flex items-center gap-2 text-sm text-gray-600">
+              <Building2 className="w-4 h-4" />
+              <span>Company</span>
+            </div>
+            <span className="text-gray-900 text-sm truncate max-w-[100px]">{category.companyName}</span>
+          </div>
+        )}
       </div>
 
       {/* Last Updated */}

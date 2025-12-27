@@ -56,6 +56,10 @@ export function EquipmentTable({ equipment, onEdit, onDelete }: EquipmentTablePr
             <tr>
               <th className="px-6 py-4 text-left text-gray-700">Equipment</th>
               <th className="px-6 py-4 text-left text-gray-700">Category</th>
+              <th className="px-6 py-4 text-left text-gray-700">Employee</th>
+              <th className="px-6 py-4 text-left text-gray-700">Department</th>
+              <th className="px-6 py-4 text-left text-gray-700">Serial Number</th>
+              <th className="px-6 py-4 text-left text-gray-700">Technical Name</th>
               <th className="px-6 py-4 text-left text-gray-700">Location</th>
               <th className="px-6 py-4 text-left text-gray-700">Last Service</th>
               <th className="px-6 py-4 text-left text-gray-700">Next Due</th>
@@ -74,6 +78,10 @@ export function EquipmentTable({ equipment, onEdit, onDelete }: EquipmentTablePr
                   </div>
                 </td>
                 <td className="px-6 py-4 text-gray-700">{item.category}</td>
+                <td className="px-6 py-4 text-gray-700">{item.employee || '-'}</td>
+                <td className="px-6 py-4 text-gray-700">{item.department || '-'}</td>
+                <td className="px-6 py-4 text-gray-700">{item.serialNumber || '-'}</td>
+                <td className="px-6 py-4 text-gray-700">{item.technicianName || '-'}</td>
                 <td className="px-6 py-4">
                   <div className="flex items-center gap-1 text-gray-700">
                     <MapPin className="w-4 h-4 text-gray-400" />

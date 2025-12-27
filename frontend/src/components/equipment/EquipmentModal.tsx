@@ -18,6 +18,18 @@ export function EquipmentModal({ equipment, onSave, onClose }: EquipmentModalPro
     nextDue: '',
     status: 'good' as 'good' | 'due' | 'overdue',
     healthScore: 100,
+    employee: '',
+    department: '',
+    serialNumber: '',
+    technicianName: '',
+    companyName: '',
+    usedBy: '',
+    maintenanceTeam: '',
+    assignDate: '',
+    description: '',
+    technician: '',
+    scrapDate: '',
+    workcenter: '',
   });
 
   useEffect(() => {
@@ -31,6 +43,18 @@ export function EquipmentModal({ equipment, onSave, onClose }: EquipmentModalPro
         nextDue: equipment.nextDue,
         status: equipment.status,
         healthScore: equipment.healthScore,
+        employee: equipment.employee || '',
+        department: equipment.department || '',
+        serialNumber: equipment.serialNumber || '',
+        technicianName: equipment.technicianName || '',
+        companyName: equipment.companyName || '',
+        usedBy: equipment.usedBy || '',
+        maintenanceTeam: equipment.maintenanceTeam || '',
+        assignDate: equipment.assignDate || '',
+        description: equipment.description || '',
+        technician: equipment.technician || '',
+        scrapDate: equipment.scrapDate || '',
+        workcenter: equipment.workcenter || '',
       });
     }
   }, [equipment]);
@@ -198,6 +222,150 @@ export function EquipmentModal({ equipment, onSave, onClose }: EquipmentModalPro
                 <span>Poor</span>
                 <span>Excellent</span>
               </div>
+            </div>
+
+            {/* Employee */}
+            <div>
+              <label className="block text-gray-700 mb-2">Employee</label>
+              <input
+                type="text"
+                value={formData.employee}
+                onChange={(e) => handleChange('employee', e.target.value)}
+                placeholder="Employee assigned"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            {/* Department */}
+            <div>
+              <label className="block text-gray-700 mb-2">Department</label>
+              <input
+                type="text"
+                value={formData.department}
+                onChange={(e) => handleChange('department', e.target.value)}
+                placeholder="Department"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            {/* Serial Number */}
+            <div>
+              <label className="block text-gray-700 mb-2">Serial Number</label>
+              <input
+                type="text"
+                value={formData.serialNumber}
+                onChange={(e) => handleChange('serialNumber', e.target.value)}
+                placeholder="Serial number"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            {/* Technician Name */}
+            <div>
+              <label className="block text-gray-700 mb-2">Technician Name</label>
+              <input
+                type="text"
+                value={formData.technicianName}
+                onChange={(e) => handleChange('technicianName', e.target.value)}
+                placeholder="Technician name"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            {/* Company Name */}
+            <div>
+              <label className="block text-gray-700 mb-2">Company Name</label>
+              <input
+                type="text"
+                value={formData.companyName}
+                onChange={(e) => handleChange('companyName', e.target.value)}
+                placeholder="Company name"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            {/* Used By */}
+            <div>
+              <label className="block text-gray-700 mb-2">Used By</label>
+              <input
+                type="text"
+                value={formData.usedBy}
+                onChange={(e) => handleChange('usedBy', e.target.value)}
+                placeholder="Name of employee using it"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            {/* Maintenance Team */}
+            <div>
+              <label className="block text-gray-700 mb-2">Maintenance Team</label>
+              <input
+                type="text"
+                value={formData.maintenanceTeam}
+                onChange={(e) => handleChange('maintenanceTeam', e.target.value)}
+                placeholder="Maintenance team"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            {/* Assign Date */}
+            <div>
+              <label className="block text-gray-700 mb-2">Assign Date</label>
+              <input
+                type="text"
+                value={formData.assignDate}
+                onChange={(e) => handleChange('assignDate', e.target.value)}
+                placeholder="Assignment date"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            {/* Description */}
+            <div className="md:col-span-2">
+              <label className="block text-gray-700 mb-2">Description</label>
+              <textarea
+                value={formData.description}
+                onChange={(e) => handleChange('description', e.target.value)}
+                placeholder="Description"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                rows={3}
+              />
+            </div>
+
+            {/* Technician */}
+            <div>
+              <label className="block text-gray-700 mb-2">Technician</label>
+              <input
+                type="text"
+                value={formData.technician}
+                onChange={(e) => handleChange('technician', e.target.value)}
+                placeholder="Technician name"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            {/* Scrap Date */}
+            <div>
+              <label className="block text-gray-700 mb-2">Scrap Date</label>
+              <input
+                type="text"
+                value={formData.scrapDate}
+                onChange={(e) => handleChange('scrapDate', e.target.value)}
+                placeholder="Scrap date"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            {/* Workcenter */}
+            <div>
+              <label className="block text-gray-700 mb-2">Workcenter</label>
+              <input
+                type="text"
+                value={formData.workcenter}
+                onChange={(e) => handleChange('workcenter', e.target.value)}
+                placeholder="Workcenter name"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
             </div>
           </div>
 

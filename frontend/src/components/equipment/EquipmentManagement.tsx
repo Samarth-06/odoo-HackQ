@@ -13,6 +13,18 @@ export interface Equipment {
   healthScore: number;
   location: string;
   model: string;
+  employee: string;
+  department: string;
+  serialNumber: string;
+  technicianName: string;
+  companyName: string;
+  usedBy: string;
+  maintenanceTeam: string;
+  assignDate: string;
+  description: string;
+  technician: string;
+  scrapDate: string;
+  workcenter: string;
 }
 
 export function EquipmentManagement() {
@@ -31,6 +43,18 @@ export function EquipmentManagement() {
       healthScore: 85,
       location: 'Warehouse A',
       model: 'Toyota 8FGU25',
+      employee: 'John Smith',
+      department: 'Logistics',
+      serialNumber: 'TYT-8FGU-2025-A203',
+      technicianName: 'Mike Johnson',
+      companyName: '',
+      usedBy: '',
+      maintenanceTeam: '',
+      assignDate: '',
+      description: '',
+      technician: '',
+      scrapDate: '',
+      workcenter: '',
     },
     {
       id: '2',
@@ -42,6 +66,18 @@ export function EquipmentManagement() {
       healthScore: 92,
       location: 'Building 3',
       model: 'Caterpillar C9',
+      employee: 'Sarah Davis',
+      department: 'Facilities',
+      serialNumber: 'CAT-C9-2024-B045',
+      technicianName: 'Robert Chen',
+      companyName: '',
+      usedBy: '',
+      maintenanceTeam: '',
+      assignDate: '',
+      description: '',
+      technician: '',
+      scrapDate: '',
+      workcenter: '',
     },
     {
       id: '3',
@@ -53,6 +89,18 @@ export function EquipmentManagement() {
       healthScore: 88,
       location: 'Office Floor 2',
       model: 'Carrier 50VE',
+      employee: 'Emily Wilson',
+      department: 'Facilities',
+      serialNumber: 'CAR-50VE-2023-012',
+      technicianName: 'David Martinez',
+      companyName: '',
+      usedBy: '',
+      maintenanceTeam: '',
+      assignDate: '',
+      description: '',
+      technician: '',
+      scrapDate: '',
+      workcenter: '',
     },
     {
       id: '4',
@@ -64,6 +112,18 @@ export function EquipmentManagement() {
       healthScore: 78,
       location: 'Parking Lot B',
       model: 'Ford F-150',
+      employee: 'James Brown',
+      department: 'Transportation',
+      serialNumber: 'FRD-F150-2022-007',
+      technicianName: 'Lisa Anderson',
+      companyName: '',
+      usedBy: '',
+      maintenanceTeam: '',
+      assignDate: '',
+      description: '',
+      technician: '',
+      scrapDate: '',
+      workcenter: '',
     },
     {
       id: '5',
@@ -75,6 +135,18 @@ export function EquipmentManagement() {
       healthScore: 65,
       location: 'Factory Floor',
       model: 'Atlas Copco GA22',
+      employee: 'Michael Garcia',
+      department: 'Production',
+      serialNumber: 'ATC-GA22-2021-C019',
+      technicianName: 'Kevin White',
+      companyName: '',
+      usedBy: '',
+      maintenanceTeam: '',
+      assignDate: '',
+      description: '',
+      technician: '',
+      scrapDate: '',
+      workcenter: '',
     },
     {
       id: '6',
@@ -86,6 +158,18 @@ export function EquipmentManagement() {
       healthScore: 95,
       location: 'Shop Floor',
       model: 'Haas VF-2',
+      employee: 'Amanda Taylor',
+      department: 'Manufacturing',
+      serialNumber: 'HAS-VF2-2023-005',
+      technicianName: 'Thomas Lee',
+      companyName: '',
+      usedBy: '',
+      maintenanceTeam: '',
+      assignDate: '',
+      description: '',
+      technician: '',
+      scrapDate: '',
+      workcenter: '',
     },
   ]);
 

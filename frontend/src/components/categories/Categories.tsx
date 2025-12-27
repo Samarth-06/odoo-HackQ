@@ -12,6 +12,8 @@ export interface Category {
   equipmentCount: number;
   totalCost: number;
   lastUpdated: string;
+  responsible: string;
+  companyName: string;
 }
 
 export function Categories() {
@@ -28,6 +30,8 @@ export function Categories() {
       equipmentCount: 12,
       totalCost: 145000,
       lastUpdated: 'Dec 20, 2025',
+      responsible: 'John Smith',
+      companyName: 'Logistics Corp',
     },
     {
       id: '2',
@@ -38,6 +42,8 @@ export function Categories() {
       equipmentCount: 8,
       totalCost: 89000,
       lastUpdated: 'Dec 18, 2025',
+      responsible: 'Sarah Johnson',
+      companyName: 'PowerTech Solutions',
     },
     {
       id: '3',
@@ -48,6 +54,8 @@ export function Categories() {
       equipmentCount: 15,
       totalCost: 210000,
       lastUpdated: 'Dec 22, 2025',
+      responsible: 'Michael Davis',
+      companyName: 'Climate Systems Inc',
     },
     {
       id: '4',
@@ -58,6 +66,8 @@ export function Categories() {
       equipmentCount: 18,
       totalCost: 425000,
       lastUpdated: 'Dec 25, 2025',
+      responsible: 'Emily Wilson',
+      companyName: 'Fleet Management Co',
     },
     {
       id: '5',
@@ -68,6 +78,8 @@ export function Categories() {
       equipmentCount: 10,
       totalCost: 95000,
       lastUpdated: 'Dec 15, 2025',
+      responsible: 'David Martinez',
+      companyName: 'Industrial Air Ltd',
     },
     {
       id: '6',
@@ -78,6 +90,8 @@ export function Categories() {
       equipmentCount: 22,
       totalCost: 680000,
       lastUpdated: 'Dec 26, 2025',
+      responsible: 'Jessica Brown',
+      companyName: 'Production Systems',
     },
     {
       id: '7',
@@ -88,6 +102,8 @@ export function Categories() {
       equipmentCount: 35,
       totalCost: 125000,
       lastUpdated: 'Dec 10, 2025',
+      responsible: 'Robert Chen',
+      companyName: 'SafeGuard Inc',
     },
     {
       id: '8',
@@ -98,6 +114,8 @@ export function Categories() {
       equipmentCount: 42,
       totalCost: 185000,
       lastUpdated: 'Dec 24, 2025',
+      responsible: 'Amanda Taylor',
+      companyName: 'TechSystems Corp',
     },
   ]);
 

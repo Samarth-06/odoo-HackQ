@@ -17,6 +17,8 @@ export function CategoryModal({ category, onSave, onClose }: CategoryModalProps)
     equipmentCount: 0,
     totalCost: 0,
     lastUpdated: 'Dec 27, 2025',
+    responsible: '',
+    companyName: '',
   });
 
   const iconOptions = [
@@ -39,6 +41,8 @@ export function CategoryModal({ category, onSave, onClose }: CategoryModalProps)
         equipmentCount: category.equipmentCount,
         totalCost: category.totalCost,
         lastUpdated: category.lastUpdated,
+        responsible: category.responsible,
+        companyName: category.companyName,
       });
     }
   }, [category]);
@@ -116,6 +120,30 @@ export function CategoryModal({ category, onSave, onClose }: CategoryModalProps)
                 rows={3}
               />
             </div>
+          </div>
+
+          {/* Responsible */}
+          <div>
+            <label className="block text-gray-700 mb-2">Responsible</label>
+            <input
+              type="text"
+              value={formData.responsible}
+              onChange={(e) => handleChange('responsible', e.target.value)}
+              placeholder="Person responsible for this category"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent"
+            />
+          </div>
+
+          {/* Company Name */}
+          <div>
+            <label className="block text-gray-700 mb-2">Company Name</label>
+            <input
+              type="text"
+              value={formData.companyName}
+              onChange={(e) => handleChange('companyName', e.target.value)}
+              placeholder="Company name"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6366F1] focus:border-transparent"
+            />
           </div>
 
           {/* Icon Selection */}
