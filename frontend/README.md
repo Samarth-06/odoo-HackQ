@@ -1,7 +1,7 @@
 
   # Enterprise Dashboard UI Design
 
-  This is a code bundle for Enterprise Dashboard UI Design. The original project is available at https://www.figma.com/design/ZaoAj4tFamk58L4dnZwM7R/Enterprise-Dashboard-UI-Design.
+ 
 
   ## Running the code
 
