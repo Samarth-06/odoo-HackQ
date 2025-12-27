@@ -17,11 +17,19 @@ export function MaintenanceModal({ onSave, onClose }: MaintenanceModalProps) {
     notes: '',
     status: 'completed' as 'completed' | 'scheduled' | 'in-progress',
     category: 'Routine Maintenance',
+    maintenanceType: 'Preventive' as 'Corrective' | 'Preventive',
+    duration: '',
+    priority: 'Medium' as 'Low' | 'Medium' | 'High',
+    companyName: '',
+    createdBy: '',
+    timestamp: new Date().toLocaleString(),
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSave(formData);
+    // ensure timestamp is current when submitting
+    const payload = { ...formData, timestamp: new Date().toLocaleString() };
+    onSave(payload);
   };
 
   const handleChange = (field: string, value: any) => {
@@ -111,6 +119,58 @@ export function MaintenanceModal({ onSave, onClose }: MaintenanceModalProps) {
               </select>
             </div>
 
+            {/* Maintenance Type */}
+            <div>
+              <label className="block text-gray-700 mb-2">Maintenance Type *</label>
+              <select
+                value={formData.maintenanceType}
+                onChange={(e) => handleChange('maintenanceType', e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                required
+              >
+                <option value="Corrective">Corrective</option>
+                <option value="Preventive">Preventive</option>
+              </select>
+            </div>
+
+            {/* Duration */}
+            <div>
+              <label className="block text-gray-700 mb-2">Duration</label>
+              <input
+                type="text"
+                value={formData.duration}
+                onChange={(e) => handleChange('duration', e.target.value)}
+                placeholder="e.g., 2h, 30m"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            {/* Priority */}
+            <div>
+              <label className="block text-gray-700 mb-2">Priority</label>
+              <select
+                value={formData.priority}
+                onChange={(e) => handleChange('priority', e.target.value)}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              >
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+              </select>
+            </div>
+
+            {/* Company Name */}
+            <div className="md:col-span-2">
+              <label className="block text-gray-700 mb-2">Company Name</label>
+              <input
+                type="text"
+                value={formData.companyName}
+                onChange={(e) => handleChange('companyName', e.target.value)}
+                placeholder="e.g., ACME Corp"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
             {/* Cost */}
             <div>
               <label className="block text-gray-700 mb-2">Cost ($)</label>
@@ -157,6 +217,29 @@ export function MaintenanceModal({ onSave, onClose }: MaintenanceModalProps) {
               </div>
             </div>
 
+            {/* Created By */}
+            <div className="md:col-span-2">
+              <label className="block text-gray-700 mb-2">Created By</label>
+              <input
+                type="text"
+                value={formData.createdBy}
+                onChange={(e) => handleChange('createdBy', e.target.value)}
+                placeholder="e.g., Admin User"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              />
+            </div>
+
+            {/* Timestamp (read-only) */}
+            <div className="md:col-span-2">
+              <label className="block text-gray-700 mb-2">Timestamp</label>
+              <input
+                type="text"
+                value={formData.timestamp}
+                readOnly
+                className="w-full px-4 py-3 border border-gray-200 bg-gray-50 rounded-lg"
+              />
+            </div>
+
             {/* Notes */}
             <div className="md:col-span-2">
               <label className="block text-gray-700 mb-2">Additional Notes</label>
@@ -184,7 +267,7 @@ export function MaintenanceModal({ onSave, onClose }: MaintenanceModalProps) {
               className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors flex items-center gap-2"
             >
               <Wrench className="w-4 h-4" />
-              Add Record
+              Maintance request
             </button>
           </div>
         </form>

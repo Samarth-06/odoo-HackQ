@@ -13,6 +13,12 @@ export interface MaintenanceRecord {
   notes: string;
   status: 'completed' | 'scheduled' | 'in-progress';
   category: string;
+  maintenanceType?: 'Corrective' | 'Preventive';
+  duration?: string;
+  priority?: 'Low' | 'Medium' | 'High';
+  companyName?: string;
+  timestamp?: string;
+  createdBy?: string;
 }
 
 export function MaintenanceDetails() {
@@ -30,6 +36,12 @@ export function MaintenanceDetails() {
       notes: 'All fluids checked and topped off. No issues found.',
       status: 'completed',
       category: 'Routine Maintenance',
+      maintenanceType: 'Preventive',
+      duration: '2h',
+      priority: 'Low',
+      companyName: 'ACME Logistics',
+      timestamp: 'Dec 15, 2025 09:30 AM',
+      createdBy: 'admin',
     },
     {
       id: '2',
@@ -41,6 +53,12 @@ export function MaintenanceDetails() {
       notes: 'Generator running smoothly. Battery voltage normal.',
       status: 'completed',
       category: 'Inspection',
+      maintenanceType: 'Preventive',
+      duration: '1.5h',
+      priority: 'Medium',
+      companyName: 'PowerServ Inc',
+      timestamp: 'Dec 12, 2025 02:15 PM',
+      createdBy: 's.chen',
     },
     {
       id: '3',
@@ -52,6 +70,12 @@ export function MaintenanceDetails() {
       notes: 'Scheduled maintenance. Parts ordered.',
       status: 'scheduled',
       category: 'Routine Maintenance',
+      maintenanceType: 'Preventive',
+      duration: '3h',
+      priority: 'Low',
+      companyName: 'Climate Solutions',
+      timestamp: 'Dec 28, 2025 08:00 AM',
+      createdBy: 't.wilson',
     },
     {
       id: '4',
@@ -63,6 +87,12 @@ export function MaintenanceDetails() {
       notes: 'Replaced pressure valve and seal. Tested under load.',
       status: 'completed',
       category: 'Repair',
+      maintenanceType: 'Corrective',
+      duration: '4h',
+      priority: 'High',
+      companyName: 'Rapid Repairs LLC',
+      timestamp: 'Dec 10, 2025 11:45 AM',
+      createdBy: 'm.johnson',
     },
     {
       id: '5',
@@ -74,6 +104,12 @@ export function MaintenanceDetails() {
       notes: 'Machine calibrated to spec. Precision verified.',
       status: 'completed',
       category: 'Calibration',
+      maintenanceType: 'Preventive',
+      duration: '2.5h',
+      priority: 'Medium',
+      companyName: 'Precision Works',
+      timestamp: 'Dec 1, 2025 04:20 PM',
+      createdBy: 'd.lee',
     },
     {
       id: '6',
@@ -85,6 +121,12 @@ export function MaintenanceDetails() {
       notes: 'Rotating tires and checking brake pads.',
       status: 'in-progress',
       category: 'Routine Maintenance',
+      maintenanceType: 'Preventive',
+      duration: '1h',
+      priority: 'Low',
+      companyName: 'FleetCare',
+      timestamp: 'Dec 27, 2025 10:00 AM',
+      createdBy: 's.chen',
     },
   ]);
 
@@ -122,7 +164,7 @@ export function MaintenanceDetails() {
           className="flex items-center gap-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
         >
           <Plus className="w-4 h-4" />
-          Add Record
+          Maintance request
         </button>
       </div>
 
